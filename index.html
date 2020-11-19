@@ -15,12 +15,18 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap" rel="stylesheet">
 
-
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<link rel="stylesheet" href="css/style.css" />
 
 	<title> Justin and Dajia Thai The Knot!</title>
 </head>
+
+<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+</style>
 
 <body class='container'>
 	<section class="section section-main">
@@ -156,7 +162,19 @@
 	
 	<div class="text-box">
 			<h1 id="section-aspirations">Their Aspirations</h1>
-			<p>Something something dreams. Something. make it happen. House. Kids. Love. </p>
+			<div class="ourStory">
+				<div class="ourStory--row">
+					<div class="ourStory--left">
+						<p>As many may already know, Justin is a dreamer and Dajia is a planner.
+						Together they are limitless. As time progresses they expect to start a family 
+						of their own and travel the world. They believe in the gospel and expect to share 
+						that with as many people they can reach.</p>
+					</div>
+					<div class="ourStory--right">
+						
+					</div>
+				</div>
+			</div>
 	</div>
 	
 	<div class="text-box">
@@ -164,14 +182,16 @@
 			<div class="ourStory">
 				<div class="ourStory--row">
 					<div class="ourStory--left">
-							<h2> The Group </h2>
+							<p>Thank you to everyone who agreed to participate in our 
+							bridal group. You were each chosen because of the special 
+							role you’ve played in our lives as siblings, cousins, and 
+							best friends. No one knows us better than you all. Cheers 
+							to another decade of friendship and family!
+							</p>
 							
 					</div>
 					<div class="ourStory--right">
-					
 						<img class="img-large" src="img/group-1.jpg" alt="">
-						<img class="img-large" src="img/group-6.jpg" alt="">
-
 					</div>
 				</div>
 				
@@ -360,8 +380,36 @@
 	</a>
 	<!-- Test the scroll -->
 
-
 </body>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function () {
