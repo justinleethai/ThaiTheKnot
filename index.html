@@ -23,9 +23,7 @@
 </head>
 
 <style>
-.mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}
+.mySlides {display:none;}
 </style>
 
 <body class='container'>
@@ -147,13 +145,24 @@
 							and celebrate with everyone!
 					</div>
 					<div class="ourStory--right">
+						
+					<div class="w3-content w3-display-container" style="display: flex; justify-content: center;">
+					  <img class="mySlides" src="img/now-1.jpg" style="width:75%; border-radius: 1.5rem;">
+					  <img class="mySlides" src="img/now-3.jpg" style="width:75%; border-radius: 1.5rem;">
+					  <img class="mySlides" src="img/now-2.jpg" style="width:75%; border-radius: 1.5rem;">
+
+					  <button class="w3-button w3-light-grey w3-display-left" style="left:8%" onclick="plusDivs(-1)">&#10094;</button>
+					  <button class="w3-button w3-light-grey w3-display-right" style="right:8%" onclick="plusDivs(1)">&#10095;</button>
+					</div>	
+						
+					<!--	
 						<img class="img-large" src="img/now-1.jpg" alt="">
 						<img class="img-small" src="img/now-3.jpg" alt="">
 						<img class="img-small" src="img/now-2.JPG" alt="">
-
+					-->
 					</div>
-				</div>
 			
+				</div>
 			</div>
 			
 		</div>
@@ -381,7 +390,9 @@
 	<!-- Test the scroll -->
 
 </body>
+
 <script>
+//For slider from w3css
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -389,26 +400,20 @@ function plusDivs(n) {
   showDivs(slideIndex += n);
 }
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";  
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
   x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
 }
 </script>
+
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -419,7 +424,7 @@ function showDivs(n) {
 			// Make sure this.hash has a value before overriding default behavior
 			if (this.hash !== "") {
 				// Prevent default anchor click behavior
-				event.preventDefault();
+				//event.preventDefault();
 
 				// Store hash
 				var hash = this.hash;
